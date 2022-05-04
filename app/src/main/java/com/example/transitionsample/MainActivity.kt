@@ -1,5 +1,6 @@
 package com.example.transitionsample
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +12,9 @@ class MainActivity : AppCompatActivity() {
 
         // viewの取得
         val btn1: Button = findViewById(R.id.btn1)
-        val btn2:Button = findViewById(R.id.btn2)
+        val btn2: Button = findViewById(R.id.btn2)
+        val btn3: Button =findViewById(R.id.btn3)
+
 
         // btn1を押したら
         btn1.setOnClickListener {
@@ -28,5 +31,12 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.fl,BlankFragment2.newInstance())
                 .commit()
         }
+
+        // btn3を押したら
+        btn3.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
