@@ -3,6 +3,7 @@ package com.example.transitionsample
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -13,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         // viewの取得
         val btn1: Button = findViewById(R.id.btn1)
         val btn2: Button = findViewById(R.id.btn2)
-        val btn3: Button =findViewById(R.id.btn3)
-
+        val btn3: Button = findViewById(R.id.btn3)
+        val et: EditText = findViewById(R.id.et)
 
         // btn1を押したら
         btn1.setOnClickListener {
@@ -35,7 +36,12 @@ class MainActivity : AppCompatActivity() {
         // btn3を押したら
         btn3.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
+
+            // 値を渡す
+            intent.putExtra("TEXT",et.text.toString())
+
             startActivity(intent)
+
         }
 
     }
